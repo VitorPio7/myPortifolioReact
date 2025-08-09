@@ -1,4 +1,7 @@
 *{
+   font-family: "Mozilla Text", sans-serif;
+}
+body{
     margin: 0px;
     padding: 0px;
     background: linear-gradient(14deg,#000000,#454545,#101310,#0b0c0b);
@@ -7,7 +10,12 @@
     background-repeat: no-repeat;
     height: 100vh;
 }
-
+.desktop-nav button{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin: 15px;
+}
 
 @keyframes gradient-animation {
   0% {
@@ -19,4 +27,23 @@
   100% {
     background-position: 0% 50%;
   }
+}
+.mobile-nav {
+  display: block;
+}
+.desktop-nav {
+  display: none;
+}
+
+@media (max-width: 768px) {
+ .mobile-nav{
+  display: none;
+ }
+ .desktop-nav {
+  display: block;
+}
+
+ .app-layout{
+  flex-direction: column;
+ }
 }
