@@ -4,7 +4,15 @@ import { motion } from "motion/react";
 export default function SideBar({data,children}){
     return (
       <div>
-        <nav className={styles.sidebar}>
+        <motion.nav
+          className={styles.sidebar}
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration:0.4,
+            scale:{type:"spring", visualDuration: 0.4, bounce: 0.3
+            }}}
+        >
           {children}
           <ul>
             {data.map((el, index) => {
@@ -23,7 +31,7 @@ export default function SideBar({data,children}){
           <motion.button whileHover={{ scale: 1.09 }} whileTap={{ scale: 0.8 }}>
             Contact
           </motion.button>
-        </nav>
+        </motion.nav>
       </div>
     );
 }
