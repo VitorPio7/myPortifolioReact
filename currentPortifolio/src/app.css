@@ -4,12 +4,24 @@
 body{
     margin: 0px;
     padding: 0px;
-    background: linear-gradient(14deg,#000000,#454545,#101310,#0b0c0b);
-    background-size: 240% 240%;
-    animation: gradient-animation 12s ease infinite;
+    background-color: #0c0f1a;
+    background: radial-gradient(ellipse at 10% 90%, rgba(106, 45, 166, 0.4), transparent 50%),
+    radial-gradient(ellipse at 90% 20%, rgba(45, 117, 166, 0.4), transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(68, 45, 166, 0.2), transparent 60%), #0c0f1a; 
+     overflow: hidden;
+    background-size: 400% 400%;
+    animation: moveGradient 20s ease-in-out infinite alternate;
     background-repeat: no-repeat;
     height: 100vh;
 }
+@keyframes moveGradient {
+  from {
+    background-color: 0% 0%;
+  }to{
+    background-position: 100% 100%;
+  }
+}
+
 .desktop-nav button{
   background-color: transparent;
   border: none;
@@ -17,17 +29,7 @@ body{
   margin: 15px;
 }
 
-@keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
+
 .mobile-nav {
   display: block;
 }

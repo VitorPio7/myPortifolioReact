@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 export default function Header({data}){
   return (
     <header className={styles.headerBox}>
+     <img src="logo.png" width="80px" />
       {data?.map((el, index) => {
         return (
           <motion.a

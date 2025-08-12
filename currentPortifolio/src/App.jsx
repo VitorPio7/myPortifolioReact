@@ -4,6 +4,8 @@ import myData from './assets/header.js'
 import SideBar from "./components/Sidebar.jsx";
 import { useState } from "react";
 import { TfiMenu } from "react-icons/tfi";
+import Card from "./components/Card.jsx";
+import Carousel from "./components/Carousel.jsx";
 export default function App() {
   let [openTab,setCloseTab] = useState(false);
   return (
@@ -20,13 +22,14 @@ export default function App() {
               }}
             />
           </button>
-          {openTab && <SideBar data={myData}></SideBar> }
+          {openTab && <SideBar data={myData}></SideBar>}
         </div>
         <div className="mobile-nav">
           <Header data={myData} />
         </div>
         <main className="main-content">
-          <h1>Conteudo Principal</h1>
+          <Card />
+          <Carousel/>
         </main>
       </div>
     </>

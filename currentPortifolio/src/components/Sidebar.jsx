@@ -1,17 +1,14 @@
 import styles from './css/sidebar.module.css';
-import { motion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 
 export default function SideBar({data,children}){
     return (
-      <div>
-        <motion.nav
-          className={styles.sidebar}
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{
-            duration:0.4,
-            scale:{type:"spring", visualDuration: 0.4, bounce: 0.3
-            }}}
+      <AnimatePresence>
+        <motion.nav className={styles.sidebar}
+         key="box"
+         initial={{opacity:0, scale:0}}
+         animate={{opacity:1,scale:1}}
+         exit={{opacity:0, scale:0}}
         >
           {children}
           <ul>
@@ -32,6 +29,6 @@ export default function SideBar({data,children}){
             Contact
           </motion.button>
         </motion.nav>
-      </div>
+      </AnimatePresence>
     );
 }
